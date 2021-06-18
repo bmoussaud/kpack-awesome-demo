@@ -1,0 +1,18 @@
+apiVersion: kpack.io/v1alpha1
+kind: Builder
+metadata:
+  name: springboot-builder  
+spec:
+  serviceAccount: harbor-service-account
+  tag: harbor.mytanzu.xyz/library/springboot-builder
+  stack:
+    name: base
+    kind: ClusterStack
+  store:
+    name: default-store
+    kind: ClusterStore
+  order:
+  - group:
+    - id: paketo-buildpacks/spring-boot
+
+  
