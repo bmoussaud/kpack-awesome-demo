@@ -82,6 +82,19 @@ kubectl apply -k app/dotnetcore
 
 https://github.com/matthewmcnew/kpdemo
 
+
+## GitOps
+
+Install fluxcd on the K8S `aws-tools` cluster managened by the `kpack-awesome-demo` repository managed by the `${GITHUB_OWNER}`
+
+```bash
+export GITHUB_TOKEN=xxxxx
+export GITHUB_OWNER=bmoussaud
+flux bootstrap github --owner=${GITHUB_OWNER} --repository=kpack-awesome-demo --branch=main --path=./clusters/aws-tools --personal
+```
+
+
+
 ## Contribute
 
 Contributions are always welcome!
