@@ -69,6 +69,15 @@ Follow the logs of the build:
 $ logs -namespace kpack -image cnb-dotnetcore-image
 ```
 
+## Deploy the applications
+
+````
+kubectl apply -k app/nodejs
+kubectl apply -k app/springboot
+kubectl apply -k app/dotnetcore
+````
+
+
 ## Vizualize the kpack in action
 
 https://github.com/matthewmcnew/kpdemo

@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:  
+  name: dotnetcore  
+spec:
+  rules:
+  - host: dotnetcore-kpackdemo.mytanzu.xyz
+    http:
+      paths:
+      - backend:
+          service:
+            name: app
+            port:
+              name: http
+        path: /
+        pathType: Prefix
+  

@@ -1,0 +1,14 @@
+# kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- 01-namespace.yml
+- 02-configmap.yml
+- 03-pvc.yml
+- 04-deployment.yml 
+- 05-service.yml
+- 06-ingress.yml
+namespace: cnb-nodejs
+images:
+  - name: alexandreroman/cnb-nodejs
+    newName: harbor.mytanzu.xyz/library/cnb-nodejs
