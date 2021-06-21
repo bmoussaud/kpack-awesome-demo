@@ -16,3 +16,6 @@ metadata:
 spec:
   imageRepositoryRef:
     name: springboot-image-repository
+  policy:
+    semver:
+      range: '>=1.0.0'
