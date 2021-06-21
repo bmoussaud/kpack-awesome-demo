@@ -11,7 +11,7 @@ pre-requisite: [install kpack](https://github.com/pivotal/kpack/blob/main/docs/i
 ## nodejs 
 
 ```bash
-$ kubectl apply -f nodejs -n kpack
+$ kubectl apply -f kpack/nodejs -n kpack
 ```
 
 Check the configuration is ok 
@@ -32,7 +32,7 @@ $ logs -namespace kpack -image cnb-nodejs-image
 ## SpringBoot 
 
 ```bash
-$ kubectl apply -f springboot -n kpack
+$ kubectl apply -f kpack/springboot -n kpack
 ```
 
 Check the configuration is ok 
@@ -52,7 +52,7 @@ $ logs -namespace kpack -image cnb-nodejs-image
 ## .NET Core (ASP.NET) 
 
 ```bash
-$ kubectl apply -f dotnetcore -n kpack
+$ kubectl apply -f kpack/dotnetcore -n kpack
 ```
 
 Check the configuration is ok 
