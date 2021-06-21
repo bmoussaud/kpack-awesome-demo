@@ -1,12 +1,12 @@
 ---
 apiVersion: image.toolkit.fluxcd.io/v1alpha2
-kind: ImageRepository
+kind:  
 metadata:
   name: springboot-image-repository
   namespace: flux-system
 spec:
   image: harbor.mytanzu.xyz/library/cnb-springboot
-  interval: 2m0s
+  interval: 1m0s
   secretRef:
     name: harbor-service-account
     namespace: kpack
