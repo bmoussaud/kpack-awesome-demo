@@ -90,10 +90,14 @@ Install fluxcd on the K8S `aws-tools` cluster managened by the `kpack-awesome-de
 ```bash
 export GITHUB_TOKEN=xxxxx
 export GITHUB_OWNER=bmoussaud
-flux bootstrap github --owner=${GITHUB_OWNER} --repository=kpack-awesome-demo --branch=main --path=./clusters/aws-tools --personal
+$flux bootstrap github --components-extra=image-reflector-controller,image-automation-controller --owner=${GITHUB_OWNER} --repository=kpack-awesome-demo --branch=main --path=./clusters/aws-tools --personal --read-write-key 
 ```
 
+Force Flux to reconcile:
 
+```bash
+$flux reconcile kustomization flux-system --with-source
+```
 
 ## Contribute
 
