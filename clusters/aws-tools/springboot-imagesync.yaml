@@ -5,8 +5,8 @@ metadata:
   name: springboot-image-repository
   namespace: flux-system
 spec:
-  image: harbor.mytanzu.xyz/library/cnb-springboot
   interval: 1m0s
+  image: harbor.mytanzu.xyz/library/cnb-springboot
   secretRef:
     name: harbor-service-account
     namespace: kpack
