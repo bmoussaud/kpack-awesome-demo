@@ -87,6 +87,8 @@ https://github.com/matthewmcnew/kpdemo
 
 Install fluxcd on the K8S `aws-tools` cluster managened by the `kpack-awesome-demo` repository managed by the `${GITHUB_OWNER}`
 
+Ref: https://fluxcd.io/docs/guides/image-update/
+
 ```bash
 export GITHUB_TOKEN=xxxxx
 export GITHUB_OWNER=bmoussaud
