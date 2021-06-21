@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   image: harbor.mytanzu.xyz/library/cnb-springboot
-  interval: 1m0s
+  interval: 2m0s
   secretRef:
     name: harbor-service-account
     namespace: kpack
@@ -14,9 +14,10 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1alpha2
 kind: ImagePolicy
 metadata:
-  name: springboot-image-policy
+  name: springoot-image-policy
   namespace: flux-system
 spec:
   imageRepositoryRef:
     name: springboot-image-repository
-  
+--
+
