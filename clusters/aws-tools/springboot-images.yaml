@@ -7,7 +7,7 @@ metadata:
 spec:
   image: harbor.mytanzu.xyz/library/cnb-springboot
   interval: 1m0s
---
+---
 apiVersion: image.toolkit.fluxcd.io/v1alpha2
 kind: ImagePolicy
 metadata:
@@ -17,8 +17,8 @@ spec:
   imageRepositoryRef:
     name: springboot-image-repository
   filterTags:
-    pattern: '^b(?P<build>\d).(\d\d\d\d\d\d\d\d).(\d\d\d\d\d\d)$'    
-    extract: '$build'  
+    pattern: '^b(?P<ts>\d).(\d\d\d\d\d\d\d\d).(\d\d\d\d\d\d)$'    
+    extract: '$ts'  
   policy:
      numerical:
       order: asc
