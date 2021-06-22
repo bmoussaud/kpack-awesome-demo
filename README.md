@@ -101,6 +101,13 @@ Force Flux to reconcile:
 $flux reconcile kustomization flux-system --with-source
 ```
 
+Chech Image configuration
+
+```bash
+flux get image repository springboot-image-repository
+flux get image policy  sprinboot-image-policy
+```
+
 ## Contribute
 
 Contributions are always welcome!

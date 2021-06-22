@@ -19,3 +19,18 @@ spec:
   policy:
     semver:
       range: '>=1.0.0'
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha2
+kind: ImagePolicy
+metadata:
+  name: harbor-policy
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: springboot-image-repository
+  filterTags:
+    pattern: '^b(?P<ts>.*).*$'    
+    extract: '$ts'  
+  policy:
+     numerical:
+      order: asc
