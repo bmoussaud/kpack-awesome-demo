@@ -9,4 +9,28 @@ spec:
   ref:
     branch: main
   url: https://github.com/bmoussaud/kpack-awesome-demo.git
-
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha2
+kind: ImageUpdateAutomation
+metadata:
+  name: kpack-awesome-demo-automation
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: kpack-awesome-demo
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: bmoussaud@users.noreply.github.com
+        name: bmoussaud
+      messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
+    push:
+      branch: main
+  update:
+    path: ./clusters/aws-tools
+    strategy: Setters
