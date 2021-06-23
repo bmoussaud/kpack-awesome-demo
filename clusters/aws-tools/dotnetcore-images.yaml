@@ -36,6 +36,6 @@ spec:
     name: kpack-awesome-demo
   validation: client
   images:
-    - name: alexandreroman/cnb-dotnetcore
+    - name: bmoussaud/cnb-dotnetcore
       newName: harbor.mytanzu.xyz/library/cnb-dotnetcore # {"$imagepolicy": "flux-system:dotnetcore-harbor-policy:name"}
       newTag: b4.20210623.074629 # {"$imagepolicy": "flux-system:dotnetcore-harbor-policy:tag"}

@@ -108,7 +108,7 @@ $flux reconcile kustomization flux-system --with-source
 Chech Image configuration (Ready = True)
 
 ```bash
-$flux get image repository springboot-image-repository
+$flux get image repository 
 $flux get image policy
 ```
 
