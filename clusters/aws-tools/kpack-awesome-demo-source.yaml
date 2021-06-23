@@ -8,7 +8,7 @@ spec:
   interval: 11s
   ref:
     branch: main
-  url: https://github.com/bmoussaud/kpack-awesome-demo.git
+  url: https://github.com/bmoussaud/kpack-awesome-demo
 ---
 apiVersion: image.toolkit.fluxcd.io/v1alpha2
 kind: ImageUpdateAutomation
