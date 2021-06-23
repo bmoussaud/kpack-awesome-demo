@@ -1,0 +1,41 @@
+apiVersion: image.toolkit.fluxcd.io/v1alpha2
+kind: ImageRepository
+metadata:
+  name: dotnetcore-image-repository
+  namespace: flux-system
+spec:
+  image: harbor.mytanzu.xyz/library/cnb-dotnetcore
+  interval: 1m0s
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha2
+kind: ImagePolicy
+metadata:
+  name: dotnetcore-harbor-policy
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: dotnetcore-image-repository
+  filterTags:
+    pattern: '^b(?P<ts>\d).(\d\d\d\d\d\d\d\d).(\d\d\d\d\d\d)$'
+    extract: '$ts'
+  policy:
+    numerical:
+      order: asc
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: dotnetcore-k
+  namespace: flux-system
+spec:
+  interval: 5m0s
+  path: app/dotnetcore
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: kpack-awesome-demo
+  validation: client
+  images:
+    - name: alexandreroman/cnb-dotnetcore
+      newName: harbor.mytanzu.xyz/library/cnb-dotnetcore # {"$imagepolicy": "flux-system:dotnetcore-harbor-policy:name"}
+      newTag: 5.0.0 # {"$imagepolicy": "flux-system:dotnetcore-harbor-policy:tag"}
