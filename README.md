@@ -85,9 +85,11 @@ https://github.com/matthewmcnew/kpdemo
 
 ## GitOps
 
-Install fluxcd on the K8S `aws-tools` cluster managened by the `kpack-awesome-demo` repository managed by the `${GITHUB_OWNER}`
+Ref: 
+* https://fluxcd.io/docs/guides/image-update/
+* https://particule.io/blog/flux-auto-image-update/
 
-Ref: https://fluxcd.io/docs/guides/image-update/
+Install fluxcd on the K8S `aws-tools` cluster managened by the `kpack-awesome-demo` repository managed by the `${GITHUB_OWNER}`
 
 ```bash
 export GITHUB_TOKEN=xxxxx
@@ -103,12 +105,14 @@ Force Flux to reconcile:
 $flux reconcile kustomization flux-system --with-source
 ```
 
-Chech Image configuration
+Chech Image configuration (Ready = True)
 
 ```bash
-flux get image repository springboot-image-repository
-flux get image policy  sprinboot-image-policy
+$flux get image repository springboot-image-repository
+$flux get image policy
 ```
+
+
 
 ## Contribute
 
