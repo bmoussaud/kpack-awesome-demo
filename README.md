@@ -1,6 +1,5 @@
 # KPACK Awesome Demo
 
-
 ## Setup 
 
 kpack is the kubernetest implementation of the pack, the cloud native buildpack technologie used before.
@@ -11,62 +10,62 @@ pre-requisite: [install kpack](https://github.com/pivotal/kpack/blob/main/docs/i
 ## nodejs 
 
 ```bash
-$ kubectl apply -f kpack/nodejs -n kpack
+kubectl apply -f kpack/nodejs -n kpack
 ```
 
 Check the configuration is ok 
 
 ```bash
-$ kubectl get Builder -n kpack node-builder
-$ kubectl get Image -n kpack cnb-nodejs-image
-$ kubectl get builds.kpack.io -n kpack
+kubectl get Builder -n kpack node-builder
+kubectl get Image -n kpack cnb-nodejs-image
+kubectl get builds.kpack.io -n kpack
 ```
 
 Follow the logs of the build:
 
 ```bash
-$ logs -namespace kpack -image cnb-nodejs-image
+logs -namespace kpack -image cnb-nodejs-image
 ```
 
 
 ## SpringBoot 
 
 ```bash
-$ kubectl apply -f kpack/springboot -n kpack
+kubectl apply -f kpack/springboot -n kpack
 ```
 
 Check the configuration is ok 
 
 ```bash
-$ kubectl get Builder -n kpack springboot-builder
-$ kubectl get Image -n kpack cnb-springboot-image
-$ kubectl get builds.kpack.io -n kpack
+kubectl get Builder -n kpack springboot-builder
+kubectl get Image -n kpack cnb-springboot-image
+kubectl get builds.kpack.io -n kpack
 ```
 
 Follow the logs of the build:
 
 ```bash
-$ logs -namespace kpack -image cnb-nodejs-image
+logs -namespace kpack -image cnb-nodejs-image
 ```
 
 ## .NET Core (ASP.NET) 
 
 ```bash
-$ kubectl apply -f kpack/dotnetcore -n kpack
+kubectl apply -f kpack/dotnetcore -n kpack
 ```
 
 Check the configuration is ok 
 
 ```bash
-$ kubectl get Builder -n kpack dotnetcore-builder
-$ kubectl get Image -n kpack cnb-dotnetcore-image
-$ kubectl get builds.kpack.io -n kpack
+kubectl get Builder -n kpack dotnetcore-builder
+kubectl get Image -n kpack cnb-dotnetcore-image
+kubectl get builds.kpack.io -n kpack
 ```
 
 Follow the logs of the build:
 
 ```bash
-$ logs -namespace kpack -image cnb-dotnetcore-image
+logs -namespace kpack -image cnb-dotnetcore-image
 ```
 
 ## Deploy the applications
@@ -94,22 +93,22 @@ Install fluxcd on the K8S `aws-tools` cluster managened by the `kpack-awesome-de
 ```bash
 export GITHUB_TOKEN=xxxxx
 export GITHUB_OWNER=bmoussaud
-$flux bootstrap github --components-extra=image-reflector-controller,image-automation-controller --owner=${GITHUB_OWNER} --repository=kpack-awesome-demo --branch=main --path=./clusters/aws-tools --personal --read-write-key 
+flux bootstrap github --components-extra=image-reflector-controller,image-automation-controller --owner=${GITHUB_OWNER} --repository=kpack-awesome-demo --branch=main --path=./clusters/aws-tools --personal --read-write-key 
 
-$kubectl create secret generic https-github-credentials  -n flux-system  --from-literal=username=${GITHUB_OWNER} --from-literal=password=${GITHUB_TOKEN}
+kubectl create secret generic https-github-credentials  -n flux-system  --from-literal=username=${GITHUB_OWNER} --from-literal=password=${GITHUB_TOKEN}
 ```
 
 Force Flux to reconcile:
 
 ```bash
-$flux reconcile kustomization flux-system --with-source
+flux reconcile kustomization flux-system --with-source
 ```
 
 Chech Image configuration (Ready = True)
 
 ```bash
-$flux get image repository 
-$flux get image policy
+flux get image repository 
+flux get image policy
 ```
 
 
