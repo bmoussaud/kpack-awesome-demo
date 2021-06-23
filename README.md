@@ -93,6 +93,8 @@ Ref: https://fluxcd.io/docs/guides/image-update/
 export GITHUB_TOKEN=xxxxx
 export GITHUB_OWNER=bmoussaud
 $flux bootstrap github --components-extra=image-reflector-controller,image-automation-controller --owner=${GITHUB_OWNER} --repository=kpack-awesome-demo --branch=main --path=./clusters/aws-tools --personal --read-write-key 
+
+$kubectl create secret generic https-github-credentials  -n flux-system  --from-literal=username=${GITHUB_OWNER} --from-literal=password=${GITHUB_TOKEN}
 ```
 
 Force Flux to reconcile:

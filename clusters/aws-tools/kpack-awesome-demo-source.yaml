@@ -9,6 +9,8 @@ spec:
   ref:
     branch: main
   url: https://github.com/bmoussaud/kpack-awesome-demo
+  secretRef:
+    name: https-github-credentials 
 ---
 apiVersion: image.toolkit.fluxcd.io/v1alpha2
 kind: ImageUpdateAutomation
