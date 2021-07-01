@@ -5,7 +5,7 @@ metadata:
   name: kpack-awesome-demo
   namespace: flux-system
 spec:
-  interval: 11s
+  interval: 10s
   ref:
     branch: main
   url: https://github.com/bmoussaud/kpack-awesome-demo
