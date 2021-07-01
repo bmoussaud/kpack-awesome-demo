@@ -28,7 +28,7 @@ metadata:
   name: springboot-k
   namespace: flux-system
 spec:
-  interval: 5m0s
+  interval: 30s
   path: app/springboot
   prune: true
   sourceRef:
