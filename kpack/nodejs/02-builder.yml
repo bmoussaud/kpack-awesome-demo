@@ -9,10 +9,14 @@ spec:
     name: base
     kind: ClusterStack
   store:
-    name: default-store
+    name: yetanother-store
     kind: ClusterStore
   order:
   - group:
-    - id: paketo-buildpacks/nodejs
+    - id: paketo-buildpacks/nodejs      
+    - id: mycompany/owner
+  
+  
+  
 
   

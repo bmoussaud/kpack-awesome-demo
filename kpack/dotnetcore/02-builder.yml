@@ -6,7 +6,7 @@ spec:
   serviceAccount: harbor-service-account
   tag: harbor.mytanzu.xyz/library/dotnetcore-builder
   stack:
-    name: base
+    name: full
     kind: ClusterStack
   store:
     name: default-store
