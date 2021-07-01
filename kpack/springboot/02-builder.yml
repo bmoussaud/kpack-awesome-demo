@@ -9,7 +9,7 @@ spec:
     name: base
     kind: ClusterStack
   store:
-    name: default-store
+    name: awesomedemo-store
     kind: ClusterStore
   order:
   - group:
