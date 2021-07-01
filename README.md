@@ -6,6 +6,11 @@ kpack is the kubernetest implementation of the pack, the cloud native buildpack 
 
 pre-requisite: [install kpack](https://github.com/pivotal/kpack/blob/main/docs/install.md) on your Kubernetes cluster
 
+## common object
+
+```bash
+kubectl apply -f kpack/common -n kpack
+```
 
 ## nodejs 
 
