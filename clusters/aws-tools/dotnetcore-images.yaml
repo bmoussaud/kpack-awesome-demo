@@ -28,7 +28,7 @@ metadata:
   name: dotnetcore-k
   namespace: flux-system
 spec:
-  interval: 30s
+  interval: 10s
   path: app/dotnetcore
   prune: true
   sourceRef:
