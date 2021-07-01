@@ -16,7 +16,7 @@ spec:
   imageRepositoryRef:
     name: springboot-image-repository
   filterTags:
-    pattern: '^b(?P<ts>\d).(\d\d\d\d\d\d\d\d).(\d\d\d\d\d\d)$'
+    pattern: '^b(?P<ts>\d\d).(\d\d\d\d\d\d\d\d).(\d\d\d\d\d\d)$'
     extract: '$ts'
   policy:
     numerical:
