@@ -18,7 +18,7 @@ metadata:
   name: kpack-awesome-demo-automation
   namespace: flux-system
 spec:
-  interval: 1m0s
+  interval: 10s
   sourceRef:
     kind: GitRepository
     name: kpack-awesome-demo
