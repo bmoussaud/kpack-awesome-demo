@@ -24,4 +24,4 @@ spec:
   - image: gcr.io/paketo-buildpacks/nodejs
   - image: gcr.io/paketo-buildpacks/dotnet-core
   - image: gcr.io/paketo-buildpacks/spring-boot
-  - image: harbor.mytanzu.xyz/library/owner-buildpack:0.0.1
+  - image: harbor.mytanzu.xyz/library/owner-buildpack:0.0.2

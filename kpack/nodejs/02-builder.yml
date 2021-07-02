@@ -1,7 +1,7 @@
 apiVersion: kpack.io/v1alpha1
 kind: Builder
 metadata:
-  name: node-builder  
+  name: node-builder    
 spec:
   serviceAccount: harbor-service-account
   tag: harbor.mytanzu.xyz/library/node-builder
@@ -15,6 +15,9 @@ spec:
   - group:
     - id: paketo-buildpacks/nodejs      
     - id: mycompany/owner
+      version: 0.0.2
+    
+   
   
   
   
