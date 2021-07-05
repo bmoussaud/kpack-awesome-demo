@@ -9,10 +9,11 @@ spec:
     name: base
     kind: ClusterStack
   store:
-    name: awesomedemo-store
+    name: yetanother-store
     kind: ClusterStore
   order:
   - group:
     - id: paketo-buildpacks/dotnet-core
+    - id: paketo-buildpacks/image-labels
 
   
