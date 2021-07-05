@@ -12,3 +12,7 @@ spec:
     git:
       url: https://github.com/bmoussaud/cnb-nodejs
       revision: master
+  build: # Optional
+    env:
+      - name: BP_IMAGE_LABELS
+        value: kpack.builder.hostname=gimmick3 kpack.builder.instance=tbs-2

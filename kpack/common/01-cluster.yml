@@ -24,4 +24,6 @@ spec:
   - image: gcr.io/paketo-buildpacks/nodejs
   - image: gcr.io/paketo-buildpacks/dotnet-core
   - image: gcr.io/paketo-buildpacks/spring-boot
-  - image: harbor.mytanzu.xyz/library/owner-buildpack:0.0.2
+  #- image: gcr.io/paketo-buildpacks/image-labels  not necessary to add it, it should be included ...
+  #- image: harbor.mytanzu.xyz/library/owner-buildpack:0.0.3
+  
