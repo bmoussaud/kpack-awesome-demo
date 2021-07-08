@@ -12,3 +12,7 @@ spec:
     git:
       url: https://github.com/bmoussaud/cnb-springboot
       revision: master
+  build: # Optional
+    env:
+      - name: BP_IMAGE_LABELS
+        value: kpack.builder.project=springboot kpack.builder.instance=tbs-2 kpack.builder.author=benoitmoussaud
