@@ -9,10 +9,10 @@ spec:
     name: base
     kind: ClusterStack
   store:
-    name: yetanother-store
+    name: awesomedemo-store
     kind: ClusterStore
   order:
   - group:
-    - id: paketo-buildpacks/spring-boot
+    - id: paketo-buildpacks/java
 
   
