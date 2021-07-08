@@ -6,7 +6,7 @@ spec:
   tag: harbor.mytanzu.xyz/library/cnb-springboot
   serviceAccount: harbor-service-account
   builder:
-    name: node-builder
+    name: springboot-builder  
     kind: Builder
   source:
     git:
