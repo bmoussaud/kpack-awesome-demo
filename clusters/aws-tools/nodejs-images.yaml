@@ -38,4 +38,4 @@ spec:
   images:
     - name: alexandreroman/cnb-nodejs
       newName: harbor.mytanzu.xyz/library/cnb-nodejs # {"$imagepolicy": "flux-system:nodejs-harbor-policy:name"}
-      newTag: b14.20210708.150745 # {"$imagepolicy": "flux-system:nodejs-harbor-policy:tag"}
+      newTag: b1.20210702.141011 # {"$imagepolicy": "flux-system:nodejs-harbor-policy:tag"}
