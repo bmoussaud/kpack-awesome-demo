@@ -38,4 +38,4 @@ spec:
   images:
     - name: bmoussaud/cnb-dotnetcore
       newName: harbor.mytanzu.xyz/library/cnb-dotnetcore # {"$imagepolicy": "flux-system:dotnetcore-harbor-policy:name"}
-      newTag: b6.20210906.122341 # {"$imagepolicy": "flux-system:dotnetcore-harbor-policy:tag"}
+      newTag: b7.20210908.035227 # {"$imagepolicy": "flux-system:dotnetcore-harbor-policy:tag"}
