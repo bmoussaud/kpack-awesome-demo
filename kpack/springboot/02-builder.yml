@@ -1,7 +1,7 @@
 apiVersion: kpack.io/v1alpha1
 kind: Builder
 metadata:
-  name: springboot-builder  
+  name: springboot-builder-5.5 
 spec:
   serviceAccount: harbor-service-account
   tag: harbor.mytanzu.xyz/library/springboot-builder
@@ -9,10 +9,11 @@ spec:
     name: base
     kind: ClusterStack
   store:
-    name: awesomedemo-store
+    name: awesomedemo-store-v1
     kind: ClusterStore
   order:
   - group:
     - id: paketo-buildpacks/java
+      version: 5.5.0
 
   

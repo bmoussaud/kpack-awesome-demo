@@ -6,7 +6,7 @@ spec:
   tag: harbor.mytanzu.xyz/library/cnb-springboot
   serviceAccount: harbor-service-account
   builder:
-    name: springboot-builder  
+    name: springboot-builder-5.5  
     kind: Builder
   source:
     git:
@@ -16,3 +16,5 @@ spec:
     env:
       - name: BP_IMAGE_LABELS
         value: kpack.builder.project=springboot kpack.builder.instance=tbs-2 kpack.builder.author=benoitmoussaud
+      #- name: BP_JVM_VERSION
+      #  value: "16"
