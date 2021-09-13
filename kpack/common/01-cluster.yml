@@ -24,6 +24,17 @@ spec:
 apiVersion: kpack.io/v1alpha1
 kind: ClusterStore
 metadata:
+  name: awesomedemo-store-v2
+spec:
+  sources:
+  - image: gcr.io/paketo-buildpacks/java:5.13.0
+  - image: gcr.io/paketo-buildpacks/go
+  - image: gcr.io/paketo-buildpacks/nodejs
+  - image: gcr.io/paketo-buildpacks/dotnet-core  
+---
+apiVersion: kpack.io/v1alpha1
+kind: ClusterStore
+metadata:
   name: yetanother-store
 spec:
   sources: 
