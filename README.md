@@ -116,6 +116,20 @@ flux get image repository
 flux get image policy
 ```
 
+## Demo
+
+* Modify the springboot project configuration: `https://github.com/bmoussaud/cnb-springboot/blob/master/src/main/resources/application.yml`
+* Show the build is running on commit
+  * open kpack navigator ui to show 
+  * `watch kubectl get pod -n kpack`
+  * `logs -namespace kpack -image cnb-springboot-image`
+* Show the harbor repository with the new image `https://harbor.mytanzu.xyz/harbor/projects/1/repositories/cnb-springboot`
+* Show the application has been updated
+  * `watch kubectl get pod -n cnb-springboot`
+  * ui `http://springboot-kpackdemo.mytanzu.xyz/`
+* Modify the builder to switch to java 11.0.12
+
+
 
 
 ## Contribute
