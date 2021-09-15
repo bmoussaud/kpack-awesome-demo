@@ -1,7 +1,7 @@
 apiVersion: kpack.io/v1alpha1
 kind: Builder
 metadata:
-  name: springboot-builder-11.0.11
+  name: springboot-builder-11.0.10
 spec:
   serviceAccount: harbor-service-account
   tag: harbor.mytanzu.xyz/library/springboot-builder
