@@ -127,7 +127,9 @@ flux get image policy
 * Show the application has been updated
   * `watch kubectl get pod -n cnb-springboot`
   * ui `http://springboot-kpackdemo.mytanzu.xyz/`
-* Modify the builder to switch to java 11.0.12
+* Modify the image to switch to java 11.0.12
+  * `kubectl edit image -n kpack cnb-springboot-image`
+  * replace `11.0.10` with `11.0.12`
 
 
 
