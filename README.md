@@ -124,6 +124,7 @@ flux get image policy
   * `watch kubectl get pod -n kpack`
   * `logs -namespace kpack -image cnb-springboot-image`
 * Show the harbor repository with the new image `https://harbor.mytanzu.xyz/harbor/projects/1/repositories/cnb-springboot`
+  * show the details and environment variable `kpack.builder.author`
 * Show the application has been updated
   * `watch kubectl get pod -n cnb-springboot`
   * ui `http://springboot-kpackdemo.mytanzu.xyz/`
