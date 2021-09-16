@@ -38,4 +38,4 @@ spec:
   images:
     - name: alexandreroman/cnb-springboot
       newName: harbor.mytanzu.xyz/library/cnb-springboot # {"$imagepolicy": "flux-system:springboot-harbor-policy:name"}
-      newTag: b1490.20210916.191513 # {"$imagepolicy": "flux-system:springboot-harbor-policy:tag"}
+      newTag: b1491.20210916.191524 # {"$imagepolicy": "flux-system:springboot-harbor-policy:tag"}
