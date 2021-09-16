@@ -1,5 +1,7 @@
 # KPACK Awesome Demo
 
+![Schema](image1.jpg)
+
 ## Setup 
 
 kpack is the kubernetest implementation of the pack, the cloud native buildpack technologie used before.
