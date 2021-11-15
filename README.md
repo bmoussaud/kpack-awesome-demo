@@ -139,21 +139,24 @@ kp build status cnb-springboot-image
 kp build logs   cnb-springboot-image
 ````
 
-* Modify the springboot project configuration: `https://github.com/bmoussaud/cnb-springboot/blob/master/src/main/resources/application.yml`
+* Modify the springboot project configuration: https://github.com/bmoussaud/cnb-springboot/blob/master/src/main/resources/application.yml
 * Show the build is running on commit
   * open kpack navigator ui to show 
   * `watch kubectl get pod -n kpack`
   * `logs -namespace kpack -image cnb-springboot-image` or `kp build logs cnb-springboot-image`
-* Show the harbor repository with the new image `https://harbor.mytanzu.xyz/harbor/projects/1/repositories/cnb-springboot`
+* Show the harbor repository with the new image https://harbor.mytanzu.xyz/harbor/projects/1/repositories/cnb-springboot
   * show the details and environment variable `kpack.builder.author`
+* Show the `ImageUpdater` from Flux has updated the yaml file with the new tag: https://github.com/bmoussaud/kpack-awesome-demo/blob/main/clusters/aws-tools/springboot-images.yaml or `git pull`from the cloned repository
 * Show the application has been updated
   * `watch kubectl get pod -n cnb-springboot`
   * ui `http://springboot-kpackdemo.mytanzu.xyz/`
 * Modify the image to switch to java 11.0.12
-  * `kubectl edit image -n kpack cnb-springboot-image` or  `kp image patch cnb-springboot-image --builder springboot-builder-11.0.12`
+  * Show the diff between the 2 versions
+    * `kp builder status springboot-builder-11.0.10`  
+    * `kp builder status springboot-builder-11.0.12`  
   * replace `11.0.10` with `11.0.12`
-
-
+    * `kubectl edit image -n kpack cnb-springboot-image` or  `kp image patch cnb-springboot-image --builder springboot-builder-11.0.12`
+  
 ## Reset Demo
 
 ````
