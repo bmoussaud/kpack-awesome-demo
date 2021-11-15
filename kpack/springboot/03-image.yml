@@ -8,6 +8,8 @@ spec:
   builder:
     name: springboot-builder-11.0.10
     kind: Builder
+  failedBuildHistoryLimit: 2
+  successBuildHistoryLimit: 2
   source:
     git:
       url: https://github.com/bmoussaud/cnb-springboot

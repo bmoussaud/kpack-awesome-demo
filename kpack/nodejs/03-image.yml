@@ -8,6 +8,8 @@ spec:
   builder:
     name: node-builder
     kind: Builder
+  failedBuildHistoryLimit: 2
+  successBuildHistoryLimit: 2
   source:
     git:
       url: https://github.com/bmoussaud/cnb-nodejs

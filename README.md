@@ -37,6 +37,8 @@ logs -namespace kpack -image cnb-nodejs-image
 
 ## SpringBoot 
 
+Source: https://github.com/bmoussaud/cnb-springboot
+
 ```bash
 kubectl apply -f kpack/springboot -n kpack
 ```
@@ -44,7 +46,8 @@ kubectl apply -f kpack/springboot -n kpack
 Check the configuration is ok 
 
 ```bash
-kubectl get Builder -n kpack springboot-builder
+kubectl get Builder springboot-builder-11.0.10
+kubectl get Builder springboot-builder-11.0.10 -o yaml | bat -l yaml
 kubectl get Image -n kpack cnb-springboot-image
 kubectl get builds.kpack.io -n kpack
 ```
@@ -52,7 +55,7 @@ kubectl get builds.kpack.io -n kpack
 Follow the logs of the build:
 
 ```bash
-logs -namespace kpack -image cnb-nodejs-image
+logs -namespace kpack -image cnb-springboot-image
 ```
 
 ## .NET Core (ASP.NET) 
@@ -120,22 +123,42 @@ flux get image policy
 
 ## Demo
 
+* Display the resources
+
+````
+kp clusterstore list
+kp clusterstack list
+kp builder list
+kp image list  or kubectl get images.kpack.io -A
+kp build list or kubectl get builds.kpack.io -A
+````
+
+````
+kp image status cnb-springboot-image
+kp build status cnb-springboot-image
+kp build logs   cnb-springboot-image
+````
+
 * Modify the springboot project configuration: `https://github.com/bmoussaud/cnb-springboot/blob/master/src/main/resources/application.yml`
 * Show the build is running on commit
   * open kpack navigator ui to show 
   * `watch kubectl get pod -n kpack`
-  * `logs -namespace kpack -image cnb-springboot-image`
+  * `logs -namespace kpack -image cnb-springboot-image` or `kp build logs cnb-springboot-image`
 * Show the harbor repository with the new image `https://harbor.mytanzu.xyz/harbor/projects/1/repositories/cnb-springboot`
   * show the details and environment variable `kpack.builder.author`
 * Show the application has been updated
   * `watch kubectl get pod -n cnb-springboot`
   * ui `http://springboot-kpackdemo.mytanzu.xyz/`
 * Modify the image to switch to java 11.0.12
-  * `kubectl edit image -n kpack cnb-springboot-image`
+  * `kubectl edit image -n kpack cnb-springboot-image` or  `kp image patch cnb-springboot-image --builder springboot-builder-11.0.12`
   * replace `11.0.10` with `11.0.12`
 
 
+## Reset Demo
 
+````
+kp image patch cnb-springboot-image --builder springboot-builder-11.0.10
+`````
 
 ## Contribute
 
