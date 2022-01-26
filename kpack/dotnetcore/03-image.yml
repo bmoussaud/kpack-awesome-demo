@@ -3,8 +3,8 @@ kind: Image
 metadata:
   name: cnb-dotnetcore-image
 spec:
-  tag: harbor.mytanzu.xyz/library/cnb-dotnetcore
-  serviceAccount: harbor-service-account
+  tag: harbor.mytanzu.xyz/library/cnb-dotnetcore  
+  serviceAccountName: awesomedemo-account
   builder:
     name: dotnetcore-builder
     kind: Builder

@@ -1,4 +1,4 @@
-apiVersion: kpack.io/v1alpha1
+apiVersion: kpack.io/v1alpha2
 kind: Builder
 metadata:
   name: springboot-builder-11.0.10
@@ -6,7 +6,7 @@ spec:
   serviceAccount: awesomedemo-account
   tag: harbor.mytanzu.xyz/library/springboot-builder
   stack:
-    name: base
+    name: awesomedemo-stack
     kind: ClusterStack
   store:
     name: awesomedemo-store-v1
@@ -16,7 +16,7 @@ spec:
     - id: paketo-buildpacks/java
       version: 5.5.0
 ---
-apiVersion: kpack.io/v1alpha1
+apiVersion: kpack.io/v1alpha2
 kind: Builder
 metadata:
   name: springboot-builder-11.0.12
@@ -24,7 +24,7 @@ spec:
   serviceAccount: awesomedemo-account
   tag: harbor.mytanzu.xyz/library/springboot-builder
   stack:
-    name: base
+    name: awesomedemo-stack
     kind: ClusterStack
   store:
     name: awesomedemo-store-v2

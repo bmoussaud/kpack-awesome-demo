@@ -25,3 +25,11 @@ check_nodejs:
 	kubectl get Builder -n $(AWESOMEDEMO_NS) node-builder
 	kubectl get Image -n $(AWESOMEDEMO_NS) cnb-nodejs-image
 	kubectl get builds.kpack.io -n $(AWESOMEDEMO_NS)
+
+springboot: 
+	kapp deploy -c --yes --into-ns $(AWESOMEDEMO_NS) -f kpack/springboot  -a kpack-awesomedemo-springboot
+
+check_springboot: 
+	kubectl get Builder -n $(AWESOMEDEMO_NS) springboot-builder-11.0.10 springboot-builder-11.0.12
+	kubectl get Image -n $(AWESOMEDEMO_NS) cnb-springboot-image
+	kubectl get builds.kpack.io -n $(AWESOMEDEMO_NS)

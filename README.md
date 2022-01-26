@@ -19,21 +19,19 @@ AWESOMEDEMO_registry_password=password-to-get-access-image-registry make shared
 ## nodejs project
 
 ```bash
-kubectl apply -f kpack/nodejs -n kpack
+make nodejs
 ```
 
 Check the configuration is ok 
 
 ```bash
-kubectl get Builder -n kpack node-builder
-kubectl get Image -n kpack cnb-nodejs-image
-kubectl get builds.kpack.io -n kpack
+make check_nodejs
 ```
 
 Follow the logs of the build:
 
 ```bash
-logs -namespace kpack -image cnb-nodejs-image
+kp build logs cnb-nodejs-image -n kpack-awesomedemo
 ```
 
 
@@ -42,22 +40,26 @@ logs -namespace kpack -image cnb-nodejs-image
 Source: https://github.com/bmoussaud/cnb-springboot
 
 ```bash
-kubectl apply -f kpack/springboot -n kpack
+make spring
 ```
 
 Check the configuration is ok 
 
 ```bash
-kubectl get Builder springboot-builder-11.0.10
-kubectl get Builder springboot-builder-11.0.10 -o yaml | bat -l yaml
-kubectl get Image -n kpack cnb-springboot-image
-kubectl get builds.kpack.io -n kpack
+make check_springboot
+
+or
+
+kubectl get Builder springboot-builder-11.0.10 -n kpack-awesomedemo
+kubectl get Builder springboot-builder-11.0.10 -o yaml -n kpack-awesomedemo | bat -l yaml
+kubectl get Image -n kpack-awesomedemo cnb-springboot-image 
+kubectl get builds.kpack.io -n kpack-awesomedemo
 ```
 
 Follow the logs of the build:
 
 ```bash
-logs -namespace kpack -image cnb-springboot-image
+kp build logs cnb-springboot-image -n kpack-awesomedemo
 ```
 
 ## .NET Core (ASP.NET) Project
