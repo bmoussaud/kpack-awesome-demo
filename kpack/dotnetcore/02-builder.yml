@@ -3,10 +3,10 @@ kind: Builder
 metadata:
   name: dotnetcore-builder  
 spec:
-  serviceAccount: harbor-service-account
+  serviceAccount: awesomedemo-account
   tag: harbor.mytanzu.xyz/library/dotnetcore-builder
   stack:
-    name: base
+    name: bawesomedemoase
     kind: ClusterStack
   store:
     name: yetanother-store

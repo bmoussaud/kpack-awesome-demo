@@ -3,7 +3,7 @@ kind: Builder
 metadata:
   name: springboot-builder-11.0.10
 spec:
-  serviceAccount: harbor-service-account
+  serviceAccount: awesomedemo-account
   tag: harbor.mytanzu.xyz/library/springboot-builder
   stack:
     name: base
@@ -21,7 +21,7 @@ kind: Builder
 metadata:
   name: springboot-builder-11.0.12
 spec:
-  serviceAccount: harbor-service-account
+  serviceAccount: awesomedemo-account
   tag: harbor.mytanzu.xyz/library/springboot-builder
   stack:
     name: base

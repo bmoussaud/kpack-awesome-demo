@@ -4,17 +4,19 @@
 
 ## Setup 
 
-kpack is the kubernetest implementation of the pack, the cloud native buildpack technologie used before.
+kpack is the Kubernetes implementation of the pack, the cloud native buildpack technologie used before.
 
-pre-requisite: [install kpack](https://github.com/pivotal/kpack/blob/main/docs/install.md) on your Kubernetes cluster
+pre-requisite: [install kpack](https://github.com/pivotal/kpack/blob/main/docs/install.md) on your Kubernetes cluster or run `make kpack`
 
-## common object
+## shares resources
+
+edit [kpack/shared/kpack_values.yaml](kpack/shared/kpack_values.yaml) corresponding with your environment registry.
 
 ```bash
-kubectl apply -f kpack/common -n kpack
+AWESOMEDEMO_registry_password=password-to-get-access-image-registry make shared
 ```
 
-## nodejs 
+## nodejs project
 
 ```bash
 kubectl apply -f kpack/nodejs -n kpack
@@ -35,7 +37,7 @@ logs -namespace kpack -image cnb-nodejs-image
 ```
 
 
-## SpringBoot 
+## SpringBoot project
 
 Source: https://github.com/bmoussaud/cnb-springboot
 
@@ -58,7 +60,7 @@ Follow the logs of the build:
 logs -namespace kpack -image cnb-springboot-image
 ```
 
-## .NET Core (ASP.NET) 
+## .NET Core (ASP.NET) Project
 
 ```bash
 kubectl apply -f kpack/dotnetcore -n kpack

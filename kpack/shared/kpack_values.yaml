@@ -1,0 +1,6 @@
+#@data/values
+---
+registry:
+  server: https://harbor.mytanzu.xyz
+  username: admin
+  #password injected using environment variable password: xxxxxxxx (see readme.md)

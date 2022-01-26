@@ -1,12 +1,12 @@
-apiVersion: kpack.io/v1alpha1
+apiVersion: kpack.io/v1alpha2
 kind: Builder
 metadata:
   name: node-builder    
 spec:
-  serviceAccount: harbor-service-account
+  serviceAccount: awesomedemo-account
   tag: harbor.mytanzu.xyz/library/node-builder
   stack:
-    name: base
+    name: awesomedemo-stack
     kind: ClusterStack
   store:
     name: yetanother-store

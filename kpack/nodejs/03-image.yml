@@ -1,10 +1,10 @@
-apiVersion: kpack.io/v1alpha1
+apiVersion: kpack.io/v1alpha2
 kind: Image
 metadata:
   name: cnb-nodejs-image
 spec:
   tag: harbor.mytanzu.xyz/library/cnb-nodejs
-  serviceAccount: harbor-service-account
+  serviceAccountName: awesomedemo-account
   builder:
     name: node-builder
     kind: Builder
