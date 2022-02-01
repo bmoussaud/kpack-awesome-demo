@@ -65,7 +65,13 @@ deploy-app-%: kpack-%
 	@printf "`tput bold`= Deploy Application $@`tput sgr0`\n"
 	kubectl apply -k app/$*
 
+undeploy-app-%: 
+	@printf "`tput bold`= Undeploy Application $@`tput sgr0`\n"
+	kubectl delete -k app/$*
+
 logs-%s:
 	kp build logs cnb-$*-image -n kpack-awesomedemo
 
 deploy-apps:  deploy-app-nodejs deploy-app-springboot deploy-app-dotnetcore 
+
+undeploy-apps:  undeploy-app-nodejs undeploy-app-springboot undeploy-app-dotnetcore 
