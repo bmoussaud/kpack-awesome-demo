@@ -9,4 +9,4 @@ resources:
 namespace: cnb-dotnetcore
 images:
   - name: bmoussaud/cnb-dotnetcore
-    newName: harbor.mytanzu.xyz/library/cnb-dotnetcore
+    newName: harbor.mytanzu.xyz/library/cnb-dotnet-core
