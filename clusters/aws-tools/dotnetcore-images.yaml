@@ -37,5 +37,5 @@ spec:
   validation: client
   images:
     - name: bmoussaud/cnb-dotnetcore
-      newName: harbor.mytanzu.xyz/library/cnb-dotnetcore # {"$imagepolicy": "flux-system:dotnetcore-harbor-policy:name"}
+      newName: harbor.mytanzu.xyz/library/cnb-dotnet-core # {"$imagepolicy": "flux-system:dotnetcore-harbor-policy:name"}
       newTag: b17.20211109.055253 # {"$imagepolicy": "flux-system:dotnetcore-harbor-policy:tag"}

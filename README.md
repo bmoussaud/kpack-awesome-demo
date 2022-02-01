@@ -107,7 +107,7 @@ Ref:
 * https://fluxcd.io/docs/guides/image-update/
 * https://particule.io/blog/flux-auto-image-update/
 
-Install fluxcd on the K8S `aws-tools` cluster managened by the `kpack-awesome-demo` repository managed by the `${GITHUB_OWNER}`
+Install [fluxCD] with [Flux CLI](https://fluxcd.io/docs/cmd/) on the K8S `aws-tools` cluster managed by the `kpack-awesome-demo` repository managed by the `${GITHUB_OWNER}`
 
 ```bash
 export GITHUB_TOKEN=xxxxx
