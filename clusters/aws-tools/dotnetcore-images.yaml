@@ -4,7 +4,7 @@ metadata:
   name: dotnetcore-image-repository
   namespace: flux-system
 spec:
-  image: harbor.mytanzu.xyz/library/cnb-dotnetcore
+  image: harbor.mytanzu.xyz/library/cnb-dotnet-core
   interval: 1m0s
 ---
 apiVersion: image.toolkit.fluxcd.io/v1alpha2

@@ -170,7 +170,15 @@ kp build logs   cnb-springboot-image
 
 ````
 kp image patch cnb-springboot-image --builder springboot-builder-11.0.10
-`````
+````
+
+## Delete Demo
+
+````
+flux uninstall --namespace=flux-system
+make undeploy-apps
+kubectl delete ns kpack-awesomedemo 
+````
 
 ## Contribute
 
