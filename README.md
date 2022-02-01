@@ -126,8 +126,17 @@ flux reconcile kustomization flux-system --with-source
 Chech Image configuration (Ready = True)
 
 ```bash
-flux get image repository 
-flux get image policy
+➜ flux get image repository                                                                                                               
+NAME                       	READY	MESSAGE                      	LAST SCAN                	SUSPENDED
+dotnetcore-image-repository	True 	successful scan, found 3 tags	2022-02-01T16:32:05+01:00	False
+nodejs-image-repository    	True 	successful scan, found 6 tags	2022-02-01T16:32:10+01:00	False
+springboot-image-repository	True 	successful scan, found 7 tags	2022-02-01T16:32:14+01:00	False
+
+➜ flux get image policy                                                                                                                   
+NAME                    	READY	MESSAGE                                                                                          	LATEST IMAGE
+dotnetcore-harbor-policy	True 	Latest image tag for 'harbor.mytanzu.xyz/library/cnb-dotnet-core' resolved to: b1.20220201.131546	harbor.mytanzu.xyz/library/cnb-dotnet-core:b1.20220201.131546
+nodejs-harbor-policy    	True 	Latest image tag for 'harbor.mytanzu.xyz/library/cnb-nodejs' resolved to: b1.20220201.130841     	harbor.mytanzu.xyz/library/cnb-nodejs:b1.20220201.130841
+springboot-harbor-policy	True 	Latest image tag for 'harbor.mytanzu.xyz/library/cnb-springboot' resolved to: b1.20220201.131429 	harbor.mytanzu.xyz/library/cnb-springboot:b1.20220201.131429
 ```
 
 ## Demo
@@ -151,8 +160,8 @@ kp build logs   cnb-springboot-image
 * Modify the springboot project configuration: https://github.com/bmoussaud/cnb-springboot/blob/master/src/main/resources/application.yml
 * Show the build is running on commit
   * open kpack navigator ui to show 
-  * `watch kubectl get pod -n kpack`
-  * `logs -namespace kpack -image cnb-springboot-image` or `kp build logs cnb-springboot-image`
+  * `watch kubectl get pod -n kpack-awesomedemo`
+  * `kp build logs cnb-springboot-image`
 * Show the harbor repository with the new image https://harbor.mytanzu.xyz/harbor/projects/1/repositories/cnb-springboot
   * show the details and environment variable `kpack.builder.author`
 * Show the `ImageUpdater` from Flux has updated the yaml file with the new tag: https://github.com/bmoussaud/kpack-awesome-demo/blob/main/clusters/aws-tools/springboot-images.yaml or `git pull`from the cloned repository
