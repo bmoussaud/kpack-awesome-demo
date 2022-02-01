@@ -3,4 +3,4 @@
 registry:
   server: https://harbor.mytanzu.xyz
   username: admin
-  #password injected using environment variable password: xxxxxxxx (see readme.md)
+  #password injected using environment variable password: xxxxxxxx (see readme.md) AWESOMEDEMO_registry_password

@@ -8,7 +8,7 @@ spec:
   - image: gcr.io/paketo-buildpacks/java
   - image: gcr.io/paketo-buildpacks/go:0.12.0
   - image: gcr.io/paketo-buildpacks/nodejs:0.11.0
-  - image: gcr.io/paketo-buildpacks/dotnet-core  
+  - image: gcr.io/paketo-buildpacks/dotnet-core:0.9.0
 ---
 apiVersion: kpack.io/v1alpha1
 kind: ClusterStore
@@ -19,7 +19,7 @@ spec:
   - image: gcr.io/paketo-buildpacks/java:5.5.0
   - image: gcr.io/paketo-buildpacks/go:0.12.0
   - image: gcr.io/paketo-buildpacks/nodejs:0.11.0
-  - image: gcr.io/paketo-buildpacks/dotnet-core  
+  - image: gcr.io/paketo-buildpacks/dotnet-core:0.9.0  
 ---
 apiVersion: kpack.io/v1alpha1
 kind: ClusterStore
@@ -30,7 +30,7 @@ spec:
   - image: gcr.io/paketo-buildpacks/java:5.13.0
   - image: gcr.io/paketo-buildpacks/go:0.12.0
   - image: gcr.io/paketo-buildpacks/nodejs:0.11.0
-  - image: gcr.io/paketo-buildpacks/dotnet-core  
+  - image: gcr.io/paketo-buildpacks/dotnet-core:0.9.0  
 ---
 apiVersion: kpack.io/v1alpha1
 kind: ClusterStore
@@ -41,7 +41,7 @@ spec:
   - image: gcr.io/paketo-buildpacks/java:5.8.0
   - image: gcr.io/paketo-buildpacks/go:0.12.0
   - image: gcr.io/paketo-buildpacks/nodejs:0.11.0
-  - image: gcr.io/paketo-buildpacks/dotnet-core
+  - image: gcr.io/paketo-buildpacks/dotnet-core:0.9.0
   - image: gcr.io/paketo-buildpacks/spring-boot  
 ---
 apiVersion: kpack.io/v1alpha1
@@ -54,7 +54,7 @@ spec:
   #- image: gcr.io/paketo-buildpacks/java:5.8.0
   - image: gcr.io/paketo-buildpacks/go:0.12.0
   - image: gcr.io/paketo-buildpacks/nodejs:0.11.0
-  - image: gcr.io/paketo-buildpacks/dotnet-core
+  - image: gcr.io/paketo-buildpacks/dotnet-core:0.9.0
   - image: gcr.io/paketo-buildpacks/spring-boot
   #- image: gcr.io/paketo-buildpacks/image-labels  not necessary to add it, it should be included ...
   #- image: harbor.mytanzu.xyz/library/owner-buildpack:0.0.3

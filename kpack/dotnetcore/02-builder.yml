@@ -1,4 +1,4 @@
-apiVersion: kpack.io/v1alpha1
+apiVersion: kpack.io/v1alpha2
 kind: Builder
 metadata:
   name: dotnetcore-builder  
@@ -6,7 +6,7 @@ spec:
   serviceAccount: awesomedemo-account
   tag: harbor.mytanzu.xyz/library/dotnetcore-builder
   stack:
-    name: bawesomedemoase
+    name: awesomedemo-stack
     kind: ClusterStack
   store:
     name: yetanother-store

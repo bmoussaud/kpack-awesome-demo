@@ -8,18 +8,21 @@ kpack is the Kubernetes implementation of the pack, the cloud native buildpack t
 
 pre-requisite: [install kpack](https://github.com/pivotal/kpack/blob/main/docs/install.md) on your Kubernetes cluster or run `make kpack`
 
-## shares resources
+## Shared resources
 
-edit [kpack/shared/kpack_values.yaml](kpack/shared/kpack_values.yaml) corresponding with your environment registry.
+edit [kpack/shared/kpack_values.yaml](kpack/shared/kpack_values.yaml) corresponding with your environment registry (url / username) and run:
 
 ```bash
 AWESOMEDEMO_registry_password=password-to-get-access-image-registry make shared
 ```
 
-## nodejs project
+## Configure NodeJS project
+
+Source: https://github.com/bmoussaud/cnb-nodejs
 
 ```bash
 make nodejs
+# or apply the resources in kpack/nodejs 
 ```
 
 Check the configuration is ok 
@@ -40,7 +43,8 @@ kp build logs cnb-nodejs-image -n kpack-awesomedemo
 Source: https://github.com/bmoussaud/cnb-springboot
 
 ```bash
-make spring
+make spring 
+# or apply the resources in kpack/springboot 
 ```
 
 Check the configuration is ok 
@@ -65,7 +69,8 @@ kp build logs cnb-springboot-image -n kpack-awesomedemo
 ## .NET Core (ASP.NET) Project
 
 ```bash
-kubectl apply -f kpack/dotnetcore -n kpack
+make dotnetcore 
+# or apply the resources in kpack/dotnetcore 
 ```
 
 Check the configuration is ok 
@@ -79,7 +84,7 @@ kubectl get builds.kpack.io -n kpack
 Follow the logs of the build:
 
 ```bash
-logs -namespace kpack -image cnb-dotnetcore-image
+kp build logs  cnb-dotnetcore-image -n kpack-awesomedemo
 ```
 
 ## Deploy the applications

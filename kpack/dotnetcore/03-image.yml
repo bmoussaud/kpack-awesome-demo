@@ -1,9 +1,9 @@
-apiVersion: kpack.io/v1alpha1
+apiVersion: kpack.io/v1alpha2
 kind: Image
 metadata:
   name: cnb-dotnetcore-image
 spec:
-  tag: harbor.mytanzu.xyz/library/cnb-dotnetcore  
+  tag: harbor.mytanzu.xyz/library/cnb-dotnet-core  
   serviceAccountName: awesomedemo-account
   builder:
     name: dotnetcore-builder
