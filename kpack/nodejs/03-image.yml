@@ -6,7 +6,7 @@ spec:
   tag: harbor.mytanzu.xyz/library/cnb-nodejs
   serviceAccountName: awesomedemo-account
   builder:
-    name: node-builder
+    name: nodejs-builder
     kind: Builder
   failedBuildHistoryLimit: 2
   successBuildHistoryLimit: 2

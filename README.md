@@ -21,14 +21,14 @@ AWESOMEDEMO_registry_password=password-to-get-access-image-registry make shared
 Source: https://github.com/bmoussaud/cnb-nodejs
 
 ```bash
-make nodejs
+make kpack-nodejs
 # or apply the resources in kpack/nodejs 
 ```
 
 Check the configuration is ok 
 
 ```bash
-make check_nodejs
+make check-nodejs
 ```
 
 Follow the logs of the build:
@@ -43,7 +43,7 @@ kp build logs cnb-nodejs-image -n kpack-awesomedemo
 Source: https://github.com/bmoussaud/cnb-springboot
 
 ```bash
-make spring 
+make kpack-springboot
 # or apply the resources in kpack/springboot 
 ```
 
@@ -69,7 +69,7 @@ kp build logs cnb-springboot-image -n kpack-awesomedemo
 ## .NET Core (ASP.NET) Project
 
 ```bash
-make dotnetcore 
+make kpack-dotnetcore 
 # or apply the resources in kpack/dotnetcore 
 ```
 
@@ -90,9 +90,9 @@ kp build logs  cnb-dotnetcore-image -n kpack-awesomedemo
 ## Deploy the applications
 
 ````
-kubectl apply -k app/nodejs
-kubectl apply -k app/springboot
-kubectl apply -k app/dotnetcore
+make deploy-app-nodejs or kubectl apply -k app/nodejs
+make deploy-app-springboot  or kubectl apply -k app/springboot
+make deploy-app-dotnetcore or kubectl apply -k app/dotnetcore
 ````
 
 

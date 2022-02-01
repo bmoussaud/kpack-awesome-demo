@@ -1,7 +1,7 @@
 apiVersion: kpack.io/v1alpha2
 kind: Builder
 metadata:
-  name: node-builder    
+  name: nodejs-builder    
 spec:
   serviceAccount: awesomedemo-account
   tag: harbor.mytanzu.xyz/library/node-builder

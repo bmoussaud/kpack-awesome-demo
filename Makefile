@@ -19,6 +19,7 @@ shared: namespace
 	ytt --ignore-unknown-comments -f kpack/shared --data-values-env AWESOMEDEMO | kapp deploy -c --yes --into-ns $(AWESOMEDEMO_NS) -a kpack-awesomedemo-shared -f-
 
 nodejs: 
+	@printf "`tput bold`= Deploy KAPP $@`tput sgr0`\n"
 	kapp deploy -c --yes --into-ns $(AWESOMEDEMO_NS) -f kpack/nodejs  -a kpack-awesomedemo-nodejs
 
 check_nodejs: 
@@ -50,3 +51,21 @@ check_dotnetcore:
 
 un_dotnetcore:
 	kapp delete --yes -a kpack-awesomedemo-dotnetcore
+
+check-%: 
+	kubectl get Builder -n $(AWESOMEDEMO_NS) $*-builder
+	kubectl get Image -n $(AWESOMEDEMO_NS) cnb-$*-image
+	kubectl get builds.kpack.io -n $(AWESOMEDEMO_NS)
+
+kpack-%: 
+	@printf "`tput bold`= Configure kpack for $*`tput sgr0`\n"
+	kapp deploy -c --yes --into-ns $(AWESOMEDEMO_NS) -f kpack/$*  -a kpack-awesomedemo-$*
+
+deploy-app-%: kpack-%
+	@printf "`tput bold`= Deploy Application $@`tput sgr0`\n"
+	kubectl apply -k app/$*
+
+logs-%s:
+	kp build logs cnb-$*-image -n kpack-awesomedemo
+
+deploy-apps:  deploy-app-nodejs deploy-app-springboot deploy-app-dotnetcore 
