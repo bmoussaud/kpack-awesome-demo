@@ -174,6 +174,28 @@ kp build logs   cnb-springboot-image
     * `kp builder status springboot-builder-11.0.12`  
   * replace `11.0.10` with `11.0.12`
     * `kubectl edit image -n kpack cnb-springboot-image` or  `kp image patch cnb-springboot-image --builder springboot-builder-11.0.12`
+* Demo CVE-2021-44228 (Log4j RCE exploit)
+  * https://github.com/alexandreroman/cve-2021-44228-workaround-buildpack
+  * Display the pods logs : `k logs -n cnb-springboot app-xxxxx -f`
+  * Open the application `http://springboot-kpackdemo.mytanzu.xyz/log?message=demo`
+  
+  * The pod output is
+  ````
+  2022-02-03 09:07:19.992 ERROR 1 --- [nio-8080-exec-7] o.m.d.c.s.LoggingController              : Running OpenJDK Runtime Environment (build 11.0.12+7-LTS) from BellSoft
+  2022-02-03 09:07:19.993 ERROR 1 --- [nio-8080-exec-7] o.m.d.c.s.LoggingController              : message is demo
+  ````
+  * `kp image patch cnb-springboot-image --builder springboot-builder-11.0.12-cve`  
+  * Dumps build logs : `kp build logs   cnb-springboot-image | grep cve`
+  * Open the application `http://springboot-kpackdemo.mytanzu.xyz/log?message=demo`
+  * Display the pods logs : `k logs -n cnb-springboot app-xxxxx -f`
+  * The pod output is
+  ````
+  2022-02-03 09:19:47.348 ERROR 1 --- [io-8080-exec-10] o.m.d.c.s.LoggingController              : Running ${java:runtime}
+  2022-02-03 09:19:47.348 ERROR 1 --- [io-8080-exec-10] o.m.d.c.s.LoggingController              : message is demo
+  ````
+
+
+
   
 ## Reset Demo
 
