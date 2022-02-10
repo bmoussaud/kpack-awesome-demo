@@ -2,17 +2,6 @@
 apiVersion: kpack.io/v1alpha1
 kind: ClusterStore
 metadata:
-  name: awesomedemo-store
-spec:
-  sources:
-  - image: gcr.io/paketo-buildpacks/java
-  - image: gcr.io/paketo-buildpacks/go:0.12.0
-  - image: gcr.io/paketo-buildpacks/nodejs:0.11.0
-  - image: gcr.io/paketo-buildpacks/dotnet-core:0.9.0
----
-apiVersion: kpack.io/v1alpha1
-kind: ClusterStore
-metadata:
   name: awesomedemo-store-v1
 spec:
   sources:
@@ -41,23 +30,13 @@ metadata:
 spec:
   sources: 
   - image: gcr.io/paketo-buildpacks/java:5.8.0
+  #- image: gcr.io/paketo-buildpacks/java:5.9.1
   - image: gcr.io/paketo-buildpacks/go:0.12.0
   - image: gcr.io/paketo-buildpacks/nodejs:0.11.0
   - image: gcr.io/paketo-buildpacks/dotnet-core:0.9.0
   - image: gcr.io/paketo-buildpacks/spring-boot  
----
-apiVersion: kpack.io/v1alpha1
-kind: ClusterStore
-metadata:
-  name: yetanother-store-5.9.0
-spec:
-  sources:
-  - image: gcr.io/paketo-buildpacks/java:5.9.1
-  #- image: gcr.io/paketo-buildpacks/java:5.8.0
-  - image: gcr.io/paketo-buildpacks/go:0.12.0
-  - image: gcr.io/paketo-buildpacks/nodejs:0.11.0
-  - image: gcr.io/paketo-buildpacks/dotnet-core:0.9.0
-  - image: gcr.io/paketo-buildpacks/spring-boot
   #- image: gcr.io/paketo-buildpacks/image-labels  not necessary to add it, it should be included ...
   #- image: harbor.mytanzu.xyz/library/owner-buildpack:0.0.3
+
+  
   
