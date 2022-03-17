@@ -4,7 +4,7 @@ metadata:
   name: springboot  
 spec:
   rules:
-  - host: springboot-kpackdemo.mytanzu.xyz
+  - host: springboot-kpackdemo.tools.mytanzu.xyz
     http:
       paths:
       - backend:

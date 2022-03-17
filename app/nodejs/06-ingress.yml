@@ -4,7 +4,7 @@ metadata:
   name: nodejs  
 spec:
   rules:
-  - host: nodejs-kpackdemo.mytanzu.xyz
+    - host: nodejs-kpackdemo.tools.mytanzu.xyz
     http:
       paths:
       - backend:

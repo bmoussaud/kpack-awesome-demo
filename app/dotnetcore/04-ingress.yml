@@ -4,7 +4,7 @@ metadata:
   name: dotnetcore  
 spec:
   rules:
-  - host: dotnetcore-kpackdemo.mytanzu.xyz
+  - host: dotnetcore-kpackdemo.tools.mytanzu.xyz
     http:
       paths:
       - backend:
