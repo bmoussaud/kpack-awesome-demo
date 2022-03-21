@@ -167,7 +167,7 @@ kp build logs   cnb-springboot-image
 * Show the `ImageUpdater` from Flux has updated the yaml file with the new tag: https://github.com/bmoussaud/kpack-awesome-demo/blob/main/clusters/aws-tools/springboot-images.yaml or `git pull`from the cloned repository
 * Show the application has been updated
   * `watch kubectl get pod -n cnb-springboot`
-  * ui `http://springboot-kpackdemo.mytanzu.xyz/`
+  * ui `http://springboot-kpackdemo.tools.mytanzu.xyz/`
 * Modify the image to switch to java 11.0.12
   * Show the diff between the 2 versions
     * `kp builder status springboot-builder-11.0.10`  
@@ -178,7 +178,7 @@ kp build logs   cnb-springboot-image
   * https://github.com/alexandreroman/cve-2021-44228-workaround-buildpack
   * Display the pods logs : `k logs -n cnb-springboot app-xxxxx -f`
   * Show the code : https://github.com/bmoussaud/cnb-springboot/blob/master/src/main/java/org/moussaud/demos/cnb/springboot/Application.java#L96
-  * Open the application `http://springboot-kpackdemo.mytanzu.xyz/log?message=demo`
+  * Open the application `http://springboot-kpackdemo.tools.mytanzu.xyz/log?message=demo`
   
   * The pod output is
   ````
@@ -188,16 +188,13 @@ kp build logs   cnb-springboot-image
   * `kp builder status springboot-builder-11.0.12-cve -n kpack-awesomedemo` and show the `cve-2021-44228-workaround-buildpack` is there
   * `kp image patch cnb-springboot-image --builder springboot-builder-11.0.12-cve -n kpack-awesomedemo`  
   * Dumps build logs : `kp build logs   cnb-springboot-image | grep cve`
-  * Open the application `http://springboot-kpackdemo.mytanzu.xyz/log?message=demo`
+  * Open the application `http://springboot-kpackdemo.tools.mytanzu.xyz/log?message=demo`
   * Display the pods logs : `k logs -n cnb-springboot app-xxxxx -f`
   * The pod output is
   ````
   2022-02-03 09:19:47.348 ERROR 1 --- [io-8080-exec-10] o.m.d.c.s.LoggingController              : Running ${java:runtime}
   2022-02-03 09:19:47.348 ERROR 1 --- [io-8080-exec-10] o.m.d.c.s.LoggingController              : message is demo
   ````
-
-
-
   
 ## Reset Demo
 
